@@ -1,0 +1,53 @@
+本次一共需执行 1 条case。
+运行脚本：ershouche.sh
+运行设备：d81574df
+启动app首页
+Starting: Intent { cmp=com.wuba/.home.activity.HomeActivity }
+[32m需验证页面元素：二手物品 [0m
+[32m--验证元素：二手物品 [0m
+UI hierchary dumped to: /storage/emulated/legacy/window_dump.xml
+[100%] /sdcard/window_dump.xml
+[32m页面元素:二手物品 验证成功[0m
+[32mClick elemnet : 二手车 [0m
+控件位置：[0,535][144,565]
+点击页面坐标：(72,550)
+[32m需验证页面元素：大众 Link [0m
+[32m--验证元素：大众 [0m
+UI hierchary dumped to: /storage/emulated/legacy/window_dump.xml
+[100%] /sdcard/window_dump.xml
+UI hierchary dumped to: /storage/emulated/legacy/window_dump.xml
+[ 89%] /sdcard/window_dump.xml
+[100%] /sdcard/window_dump.xml
+[32m页面元素:大众 Link 验证成功[0m
+[32mClick elemnet : 大众 Link [0m
+控件位置：[0,836][166,938]
+[0,836][166,876]
+点击页面坐标：(83,887)
+[32m需验证页面元素：com.wuba.car:id/list_item_title [0m
+[32m--验证元素：com.wuba.car:id/list_item_title [0m
+UI hierchary dumped to: /storage/emulated/legacy/window_dump.xml
+[100%] /sdcard/window_dump.xml
+UI hierchary dumped to: /storage/emulated/legacy/window_dump.xml
+[100%] /sdcard/window_dump.xml
+[32m页面元素:com.wuba.car:id/list_item_title 验证成功[0m
+[32mClick elemnet : com.wuba.car:id/list_item_title [0m
+控件位置：[270,454][690,548]
+[270,675][690,769]
+[270,896][690,990]
+[270,1117][690,1211]
+点击页面坐标：(480,501)
+[32m需验证页面元素：查看新车报价 [0m
+[32m--验证元素：查看新车报价 [0m
+UI hierchary dumped to: /storage/emulated/legacy/window_dump.xml
+[100%] /sdcard/window_dump.xml
+[32m页面元素:查看新车报价 验证成功[0m
+[32mClick elemnet : 交谈 [0m
+控件位置：[597,1228][645,1261]
+点击页面坐标：(621,1244)
+[32m需验证页面元素：你好，在吗? [0m
+[32m--验证元素：你好，在吗? [0m
+UI hierchary dumped to: /storage/emulated/legacy/window_dump.xml
+[100%] /sdcard/window_dump.xml
+[32m页面元素:你好，在吗? 验证成功[0m
+[32mBack[0m
+[32mBack[0m
