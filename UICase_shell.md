@@ -46,6 +46,7 @@ A&!B: 预期控件A存在，但控件B不存在；
 
 ~~~shell
 check_elements_by "text" '二手物品&二手车'
+check_elements_by "text" "二手物品"
 ~~~
 
 #### scroll_to_element_native
@@ -81,18 +82,6 @@ web情况
 参数一：定位元素类型："text"、"content-desc"、"id"
 
 参数二：定位的元素
-
-#### click_element_by
-
-点击页面元素
-
-参数一：定位元素类型："text"、"content-desc"、"id"
-
-参数二：待点击的元素
-
-~~~shel
-click_element_by "text" '二手车'
-~~~
 
 #### send_text
 

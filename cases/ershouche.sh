@@ -1,4 +1,4 @@
-echo "运行脚本：$(basename $0)" 
+# echo "运行脚本：$(basename $0)" 
 file_name=$(cd `dirname $0`; pwd)"/Method.sh"
 source $file_name
 

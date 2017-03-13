@@ -1,0 +1,6 @@
+本次一共执行 2 条case。
+其中运行失败case有以下几个：
+ /Users/wuxian/Documents/UICase_Shell/cases/daleisou.sh
+ /Users/wuxian/Documents/UICase_Shell/cases/ershouche.sh
+运行错误case共 2 条
+具体出错原因参见：/Users/wuxian/Documents/UICase_Shell/log/2017-03-13_19-13-39.log

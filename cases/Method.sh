@@ -6,9 +6,10 @@ log_location="${pre_file_location}/log"
 #window_dump.xml绝对路径
 dump_name="${file_location}/window_dump.xml"  
 
-time=$(date +%Y-%m-%d_%H-%M-%S)
+time1=$(date +%Y-%m-%d_%H-%M-%S)
 #日志文件路径
-log_name="${log_location}/${time}.log"
+log_name="${log_location}/${time1}.log"
+
 
 
 devices=`adb devices | grep device$ | awk '{print $1}'`
@@ -44,6 +45,17 @@ sleep_and_dumpwindow(){
     sleep $wait_time
     adb shell uiautomator dump
     adb pull /sdcard/window_dump.xml $file_location
+}
+
+screencap_error(){
+    pic_time=$(date +%Y-%m-%d_%H-%M-%S)
+    picture_name="/sdcard/${pic_time}.png"
+    adb shell screencap -p $picture_name
+    sleep 1
+    adb pull $picture_name $log_location
+    sleep 1
+    adb shell rm -f $picture_name
+    echo "\033[33m错误信息截图路径： $log_location/$picture_name\033[0m"
 }
 
 
@@ -195,7 +207,8 @@ check_elements_by(){
            element1=$element    
            check_element_by $check_elements_type $element1
            if [[ $? = 1 ]]; then
-              echo "\033[31m页面元素:$check_verify_elements 验证失败\033[0m"
+              echo "\033[31m页面元素:$check_verify_elements 验证失败 X\033[0m"
+              screencap_error
               exit 1
            fi
         done
@@ -216,7 +229,8 @@ check_elements_by(){
            fi
         done
                       
-        echo "\033[31m页面元素:$check_verify_elements 验证失败\033[0m"
+        echo "\033[31m页面元素:$check_verify_elements 验证失败 X\033[0m"
+        screencap_error
         exit 1
     
     else    ##单个元素验证
@@ -225,7 +239,8 @@ check_elements_by(){
             echo "\033[32m页面元素:$check_verify_elements 验证成功\033[0m"
             return 0   ##验证成功
         else
-            echo "\033[31m页面元素:$check_verify_elements 验证失败\033[0m"
+            echo "\033[31m页面元素:$check_verify_elements 验证失败 X\033[0m"
+            screencap_error
             exit 1
         fi
 
@@ -360,7 +375,8 @@ scroll_to_element_web(){
 
 
     else
-        echo "\033[31m页面不存在元素:$scroll_web_verify_element\033[0m"
+        echo "\033[31m页面不存在元素:$scroll_web_verify_element X\033[0m"
+        screencap_error
         exit 1
         
     fi
@@ -402,7 +418,8 @@ click_element_by(){
     echo "点击页面坐标：($x,$y)"
     adb shell input tap $x $y
     else
-        echo "\033[33m待点击元素:$click_jump_element 不存在\033[0m"
+        echo "\033[31m待点击元素:$click_jump_element 不存在 X\033[0m"
+        screencap_error
         exit 1
 
     fi
@@ -445,7 +462,8 @@ send_text(){
     adb shell input tap $x $y
     adb shell am broadcast -a ADB_INPUT_TEXT --es msg $send_text
     else
-        echo "\033[31m页面待键入内容元素:$send_jump_element 不存在\033[0m"
+        echo "\033[31m页面待键入内容元素:$send_jump_element 不存在 X\033[0m"
+        screencap_error
         exit 1
     fi
 }
