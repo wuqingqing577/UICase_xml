@@ -206,7 +206,7 @@ check_elements_by(){
         for element in ${arr[@]}; do
            element1=$element    
            check_element_by $check_elements_type $element1
-           if [[ $? = 1 ]]; then
+           if [[ $? = 0 ]]; then
               echo "\033[31m页面元素:$check_verify_elements 验证失败 X\033[0m"
               screencap_error
               exit 1

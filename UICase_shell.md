@@ -1,3 +1,5 @@
+源码下载地址：http://gitlab.58corp.com/com.wuba.wuxian.autotest/UICase_Shell
+
 # 安装配置
 
 1. 安装android sdk ,不赘述。
